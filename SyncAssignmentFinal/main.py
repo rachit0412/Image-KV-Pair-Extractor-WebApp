@@ -12,6 +12,10 @@ def text_processing(path, Outfullname, Outfilepath):
     """
     function will extract the necessary fields
     """
+    print("variables1: ", path)
+    print("variables2: ", Outfullname)
+    print("variables3: ", Outfilepath)
+
     # converting image into gray scale image
     image = cv2.imread(path)
     # height, width, channel = image.shape
@@ -72,6 +76,7 @@ def text_processing(path, Outfullname, Outfilepath):
                 'Company Period': company_period}
 
     output_file = open(Outfullname, "a")
-    print(req_dict, file=output_file)
+    print(req_dict, output_file)
     if os.path.exists(tempfile):
+        read_csv.close()
         os.remove(tempfile)
