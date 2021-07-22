@@ -6,18 +6,19 @@
 </head>
 <body>
 <h2>For which bank do you want to run the text extraction processing engine?</h2>
-<form>
+<p><i>please fill all the fields</i></p>
+
+<form name="submit" method="POST">
     <label for="Infilename">Bank name:</label><br>
-    <input type="text" name="Infilename" size="100" value="Enter the bank name here e.g. HSBC" onclick="this.value=''"/>
-    <input type="hidden" id="Infilename" name="Infilename" size="100" value="HSBC"><br>
+    <input type="text" id="Infilename" name="Infilename" size="100" placeholder="Enter the bank name here e.g. HSBC" onclick="this.value=''"><br>
     <label for="Tesseract_loc">Tesseract location:</label><br>
-    <input type="text" id="Tesseract_loc" name="Tesseract_loc" size="100" value="Enter the complete tesseract path here e.g. /usr/local/Cellar/tesseract/4.1.1/bin/tesseract" onclick="this.value=''"><br>
+    <input type="text" id="Tesseract_loc" name="Tesseract_loc" size="100" placeholder="Enter the complete tesseract path here e.g. /usr/local/Cellar/tesseract/4.1.1/bin/tesseract" onclick="this.value=''"><br>
     <label for="Infilepath">Input filepath:</label><br>
-    <input type="text" id="Infilepath" name="Infilepath" size="100" value="Enter the complete input filepath here e.g. /Users/rachit/Desktop/images/" onclick="this.value=''"><br>
+    <input type="text" id="Infilepath" name="Infilepath" size="100" placeholder="Enter the complete input filepath here e.g. /Users/rachit/Desktop/images/" onclick="this.value=''"><br>
     <label for="Outfilepath">Output filepath:</label><br>
-    <input type="text" id="Outfilepath" name="Outfilepath" size="100" value="Enter the complete output filepath here e.g. /Users/rachit/Desktop/images_output/" onclick="this.value=''"><br>
+    <input type="text" id="Outfilepath" name="Outfilepath" size="100" placeholder="Enter the complete output filepath here e.g. /Users/rachit/Desktop/images_output/" onclick="this.value=''"><br>
     <label for="Outfilename">Output filename:</label><br>
-    <input type="text" id="Outfilename" name="Outfilename" size="100" value="Enter the complete output filename here e.g. final_output.txt" onclick="this.value=''"><br>
+    <input type="text" id="Outfilename" name="Outfilename" size="100" placeholder="Enter the complete output filename here e.g. final_output.txt" onclick="this.value=''"><br>
     <input type="submit" value="Submit">
 </form>
 </body>
