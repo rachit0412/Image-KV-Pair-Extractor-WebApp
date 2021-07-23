@@ -1,7 +1,7 @@
 #   library for web apps
 from flask import Flask, render_template, request
 #   required libraries
-import pytesseract
+# import pytesseract
 #   pattern search library
 import glob
 #   os library
@@ -11,11 +11,13 @@ from main import text_processing
 
 app = Flask("my website")
 
-@app.route('/',methods=['GET'])
+
+@app.route('/', methods=['GET'])
 def index():
     return render_template('index.html')
 
-@app.route('/submit',methods=['GET','POST'])
+
+@app.route('/submit', methods=['GET', 'POST'])
 def submit():
     if request.method == 'GET':
         return render_template('submit.html')
@@ -25,21 +27,48 @@ def submit():
         Infilepath = request.form.get("Infilepath")
         outfilepath = request.form.get("Outfilepath")
         Outfilename = request.form.get("Outfilename")
-        if not Infilename or not Infilepath:
-            path = Infilepath + "*.png"
-            print("No value passed. All png files would be processed")
-        else:
-            path = Infilepath + Infilename + "*.png"
-            print("Only png files with suffix", Infilename, "would be processed")
-        if not outfilepath or not Outfilename or not Tesseract_loc:
-            print("Values missing. Job will not run")
-            breakpoint()
-        else:
-            outfullname = outfilepath + Outfilename
-            print("Output would be written to: ", outfullname)
+    if not Infilename or not Infilepath:
+        path = Infilepath + "*.png"
+        print("No value passed. All png files would be processed")
+    else:
+        path = Infilepath + Infilename + "*.png"
+        print("Only png files with suffix", Infilename, "would be processed")
+    if not outfilepath or not Outfilename or not Tesseract_loc:
+        print("Values missing. Job will not run")
+        breakpoint()
+    else:
+        outfullname = outfilepath + Outfilename
+        print("Output would be written to: ", outfullname)
 
-        text_processing(path=path, Outfullname=outfullname, Outfilepath=outfilepath)
-        return render_template('submit.html', result='Success!')
+    # delete any existing output file
+    if os.path.exists(outfullname):
+        os.remove(outfullname)
+        print("\nPrevious job file has been deleted")
+    else:
+        print("\nCan not delete the file as it doesn't exists")
+
+    # reading image using opencv
+    print("\nStarting the Main text extraction function\n")
+    path = glob.glob(path)
+    for img in path:
+        print("processing image: ", img)
+    # call the main function with the valid arguments
+        returnkvp = text_processing(path=img, Outfullname=outfullname, Outfilepath=outfilepath)
+        # print(returnkvp)
+    # print('success')
+    # decision on output file
+    if os.path.exists(outfullname):
+        status = "SUCCESS!"
+    else:
+        status = "FAILED!"
+
+    print('\njob completed')
+    return render_template('thanks.html', outfullname=outfullname, status=status, returnkvp=returnkvp, Infilename=Infilename)
+
+
+@app.route('/thanks')
+def thanks():
+    return render_template('thanks.html')
 
 
 if __name__ == "__main__":
