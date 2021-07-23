@@ -80,3 +80,5 @@ def text_processing(path, Outfullname, Outfilepath):
     if os.path.exists(tempfile):
         read_csv.close()
         os.remove(tempfile)
+
+    return req_dict
