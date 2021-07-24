@@ -11,17 +11,13 @@ Thanks. Check for your output file here:
 <br/>
 Expected result for images filtered on {{ Infilename }}:
 <br/>
-<br/>
-<br/>
-<script>
+<!-- division of the templated -->
+<div>
 <!-- For loop logic of jinja template -->
   {%for value in returnkvp%}
      <p>{{value}}</p>
   {%endfor%}
-</script>
-<br/>
-this is dif: {{ returnkvp }}
-<br/>
+</div>
 <br/>
 <a href="/">Return to Homepage</a>
 <br/>
