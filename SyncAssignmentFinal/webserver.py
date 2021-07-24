@@ -50,12 +50,14 @@ def submit():
     # reading image using opencv
     print("\nStarting the Main text extraction function\n")
     path = glob.glob(path)
+    # list var to print all the records
+    returnkvp = []
     for img in path:
         print("processing image: ", img)
     # call the main function with the valid arguments
-        returnkvp = text_processing(path=img, Outfullname=outfullname, Outfilepath=outfilepath)
-        # print(returnkvp)
-    # print('success')
+        returnkvp.append(text_processing(path=img, Outfullname=outfullname, Outfilepath=outfilepath))
+    # check if the list is successfully created
+    # print(returnkvp)
     # decision on output file
     if os.path.exists(outfullname):
         status = "SUCCESS!"
@@ -63,7 +65,7 @@ def submit():
         status = "FAILED!"
 
     print('\njob completed')
-    return render_template('thanks.html', outfullname=outfullname, status=status, returnkvp=returnkvp, Infilename=Infilename)
+    return render_template('thanks.html', outfullname=outfullname, status=status, lenkvp=len(returnkvp), returnkvp=returnkvp, Infilename=Infilename)
 
 
 @app.route('/thanks')
