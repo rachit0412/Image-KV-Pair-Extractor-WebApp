@@ -56,6 +56,7 @@ def submit():
         print("processing image: ", img)
     # call the main function with the valid arguments
         returnkvp.append(text_processing(path=img, Outfullname=outfullname, Outfilepath=outfilepath))
+        print("success")
     # check if the list is successfully created
     # print(returnkvp)
     # decision on output file
