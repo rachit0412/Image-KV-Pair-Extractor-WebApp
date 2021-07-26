@@ -9,7 +9,8 @@ import os
 #   import function from other py program
 from main import text_processing
 
-app = Flask("my website")
+# give the path to the templates folder here if jinja2 html exceptiom is raised 
+app = Flask("my website", template_folder={"templates"})
 
 
 @app.route('/', methods=['GET'])
