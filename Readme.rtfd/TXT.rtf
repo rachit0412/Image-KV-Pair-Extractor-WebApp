@@ -1,39 +1,34 @@
-{\rtf1\ansi\ansicpg1252\cocoartf2580
-\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fnil\fcharset0 HelveticaNeue-Bold;\f1\fnil\fcharset0 HelveticaNeue;}
-{\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;;}
-{\*\listtable{\list\listtemplateid1\listhybrid{\listlevel\levelnfc0\levelnfcn0\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{decimal\}.}{\leveltext\leveltemplateid1\'02\'00.;}{\levelnumbers\'01;}\fi-360\li720\lin720 }{\listname ;}\listid1}}
-{\*\listoverridetable{\listoverride\listid1\listoverridecount0\ls1}}
-\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
-\deftab560
-\pard\pardeftab560\partightenfactor0
+Synechron
+ 
+Steps: 
 
-\f0\b\fs40 \cf0 Synechron\
- \
-\pard\pardeftab560\slleading20\partightenfactor0
+1st time, Follow the steps here to create a flask environment: https://gist.github.com/dineshviswanath/af72af0ae2031cd9949f
 
-\f1\b0\fs26 \cf0 Steps: \
-\
-You must have OpenCV and tesseract installed on your system. It works differently on Windows and Mac. I am using Mac. You could also download the libraries from Anaconda or below:\
-\
-	install pip openCV\
-	install pip tesseract\
-\
-Open the project from PyCharm/Jupyter or tool of your preference. \
-\
-Create an output directory for the output file or store in the same input directory. Choice is yours. \
-\
-Run the program main.py (Enter the correct details as asked during the execution and the program should do as expected)\
-\
-\
-\
-NOT YET\
-\pard\pardeftab560\pardirnatural\partightenfactor0
-\ls1\ilvl0\cf0 While working with webapp create a directory \'93templates\'93 in\'a0the location where the program is stored and move index.html inside it.\
-All the html\'92s should stay inside the template folder.\
-Fill the bank name you would like to filter the images on.\
-Fill all the other details from where you would like to read and write. \
-Note: Even though output would be on a webpage it is required to save the file on the local and hence the parameters. \
-\
-\
-}
+Next times yo would only need to do the below:
+(base) rachit@MacBook-Pro-3 Templates % cd /users/rachit/flaskprojects/mywebsite
+(base) rachit@MacBook-Pro-3 mywebsite % source bin/activate
+(mywebsite) (base) rachit@MacBook-Pro-3 mywebsite % pip install flask
+(mywebsite) (base) rachit@MacBook-Pro-3 mywebsite % python /Users/rachit/Documents/GitHub/KVPfromOCR/SyncAssignmentFinal/webserver.py
+
+One time installation for:
+
+	pip install tesseract
+	pip install opencv-python
+
+You must have OpenCV and tesseract installed on your system. It works differenttly on Windows and Mac. I am using Mac. You could also download the libraries from Anaconda or below:
+
+Open the project from PyCharm/Jupyter. I tried running it from VS but get some error. 
+
+Create an output directory for the output file or store in the same input directory. Choice is yours. 
+
+While working with webapp create a directory “templates“ in the location where the program is stored and move index.html inside it.
+
+All the html’s should stay inside the template folder.
+
+Fill the bank name you would like to filter the images on.
+
+Fill all the other details from where you would like to read and write. 
+
+
+Run the program Webserver.py (Enter the correct details as asked during the execution and the program should do as expected)
+
