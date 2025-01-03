@@ -1,5 +1,14 @@
-# KVPfromOCR
-1. Creation of Key Value Pair from Images.
-2. Connect the python program with the webapp. 
-3. Use web input to filter the data.
-4. Render the output in the webapp.
+Key-Value Pair Creation from Images
+This repository contains a project that extracts key-value pairs from images, connects a Python program with a web application, uses web input to filter the data, and renders the output in the web application.
+
+Features
+Image Processing: Extract key-value pairs from images using Python.
+Web Application Integration: Connect the Python program with a web application.
+Data Filtering: Use web input to filter the extracted data.
+Output Rendering: Render the filtered data in the web application.
+Getting Started
+Prerequisites
+Python 3.x
+Flask (or any other web framework)
+OpenCV (for image processing)
+Any additional libraries required for your specific implementation
